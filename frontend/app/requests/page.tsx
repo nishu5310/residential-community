@@ -1,0 +1,1 @@
+export default function Requests(){return <main style={{padding:"60px 7vw"}}><a href="/">← MI PASS</a><h1>My Requests</h1><div className="card"><b>MIPASS-2026-000124</b><p>AC Repair · Provider Assigned</p></div></main>}

@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: mipass-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: mipass
+      POSTGRES_PASSWORD: mipass
+      POSTGRES_DB: mipass
+    ports:
+      - "5432:5432"
+    volumes:
+      - mipass_pgdata:/var/lib/postgresql/data
+  redis:
+    image: redis:7
+    container_name: mipass-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+volumes:
+  mipass_pgdata:

@@ -1,0 +1,1718 @@
+You are a senior product architect, UX/UI designer, full-stack engineer and SaaS product developer.
+
+Build a complete, production-quality web application called:
+
+# MI PASS
+
+Tagline:
+
+"My Society | My Services | My Life"
+
+MI PASS is a premium digital ecosystem designed specifically for HL City residents.
+
+IMPORTANT:
+The attached MI PASS logo is the official brand identity of the product.
+
+Use the uploaded logo as the PRIMARY visual reference for:
+- Brand identity
+- Color palette
+- Typography direction
+- Icon style
+- Visual language
+- UI accents
+- Gradients
+- Overall design personality
+
+Do NOT redesign the logo.
+Do NOT replace the logo with a generic icon.
+Do NOT create a different brand identity.
+
+The application should visually feel like it was designed around this exact logo.
+
+==================================================
+1. PRODUCT VISION
+==================================================
+
+MI PASS should become the digital platform for HL City.
+
+It should combine:
+
+1. My Society
+2. My Services
+3. My Life
+
+into one unified platform.
+
+The product should NOT look like:
+- a generic business directory
+- a basic society management website
+- a simple service-booking website
+- a Justdial clone
+- an Urban Company clone
+- a generic e-commerce website
+
+Instead, it should feel like:
+
+"HL City's own digital operating system."
+
+A resident should be able to open MI PASS and find almost everything required for daily life.
+
+Examples:
+
+Food
+Shopping
+Restaurants
+Bikaner
+Cinema
+Hotels
+Schools
+Healthcare
+Home maintenance
+Electricians
+Plumbers
+AC repair
+Car services
+Grocery
+Laundry
+Security
+Emergency services
+Professional services
+Entertainment
+Community services
+Society information
+Local businesses
+Authorized service providers
+
+Everything should exist inside one structured ecosystem.
+
+==================================================
+2. BRAND STRUCTURE
+==================================================
+
+The primary navigation must be based on the logo:
+
+MY SOCIETY
+MY SERVICES
+MY LIFE
+
+These are the three primary product pillars.
+
+------------------------------------------
+MY SOCIETY
+------------------------------------------
+
+This section is focused on HL City community life.
+
+Features:
+
+- Resident dashboard
+- Society announcements
+- Notices
+- Events
+- Community updates
+- Maintenance information
+- Visitor management
+- Security information
+- Emergency contacts
+- Important contacts
+- Facility information
+- Clubhouse
+- Sports facilities
+- Parking
+- Community activities
+- Society documents
+- Helpdesk
+- Complaints
+- Service requests
+
+Future-ready modules should also be possible:
+
+- Maintenance payments
+- Visitor passes
+- Domestic staff management
+- Delivery management
+- Facility booking
+- Digital resident ID
+- Community marketplace
+- Polls
+- Surveys
+
+------------------------------------------
+MY SERVICES
+------------------------------------------
+
+This is the authorized service ecosystem.
+
+Examples:
+
+Home Maintenance:
+- Electrician
+- Plumber
+- Carpenter
+- AC Repair
+- RO Repair
+- Refrigerator Repair
+- Washing Machine Repair
+- Appliance Repair
+- Pest Control
+- Cleaning
+- Painting
+- Interior
+- CCTV
+- Internet
+- Gardening
+- Laundry
+
+Professional:
+- CA
+- Lawyer
+- Architect
+- Interior Designer
+- Real Estate
+- Insurance
+- Computer Services
+
+Healthcare:
+- Doctor
+- Clinic
+- Hospital
+- Pharmacy
+- Diagnostic Centre
+- Dental
+- Physiotherapy
+- Home Healthcare
+
+Automotive:
+- Car Repair
+- Bike Repair
+- Car Wash
+- Tyres
+- Battery
+- Towing
+- Driver
+- Car Rental
+- EV Charging
+
+Emergency:
+- Medical Emergency
+- Security
+- Fire
+- Ambulance
+- Electrician Emergency
+- Plumbing Emergency
+
+IMPORTANT:
+
+MI PASS should have an AUTHORIZED PROVIDER SYSTEM.
+
+Only verified and approved providers should be allowed to receive service requests.
+
+Display:
+
+✓ MI PASS AUTHORIZED
+
+on verified providers.
+
+------------------------------------------
+MY LIFE
+------------------------------------------
+
+This section represents everyday lifestyle and local discovery.
+
+Examples:
+
+Food:
+- Bikaner
+- Restaurants
+- Cafes
+- Bakery
+- Fast Food
+- Grocery
+- Dairy
+- Fruits & Vegetables
+- Catering
+
+Shopping:
+- Clothing
+- Electronics
+- Mobiles
+- Furniture
+- Jewellery
+- Gifts
+- Supermarket
+- General Stores
+- Pharmacy
+
+Entertainment:
+- Cinema
+- Events
+- Gaming
+- Sports
+- Kids Activities
+- Parks
+- Recreation
+
+Education:
+- Schools
+- Coaching
+- Tuition
+- Daycare
+- Skill Centres
+- Computer Institutes
+
+Stay:
+- Hotels
+- Guest Houses
+- PG
+- Serviced Apartments
+
+Lifestyle:
+- Salon
+- Gym
+- Beauty
+- Fitness
+- Laundry
+- Travel
+- Events
+
+The category architecture must be dynamic.
+
+Admin must be able to create new categories without changing the code.
+
+==================================================
+3. HOMEPAGE
+==================================================
+
+Create a visually stunning premium homepage.
+
+The uploaded MI PASS logo should appear prominently.
+
+Hero section:
+
+MI PASS
+
+"Everything HL City Needs.
+One Smart Pass."
+
+Supporting text:
+
+"Your trusted digital gateway to your society, services and everyday life."
+
+Primary search:
+
+"What do you need today?"
+
+Search examples:
+
+"Find an electrician"
+"Book AC repair"
+"Find a restaurant"
+"Show hotels"
+"Find Bikaner"
+"Cinema"
+"Doctor near me"
+
+Primary action buttons:
+
+Explore Services
+Explore My Life
+
+Secondary quick actions:
+
+Emergency
+My Requests
+My Society
+Help
+
+==================================================
+4. THREE-PILLAR HOMEPAGE
+==================================================
+
+Immediately after the hero section create three premium cards:
+
+MY SOCIETY
+"Stay connected with your community."
+
+MY SERVICES
+"Get trusted and authorized services."
+
+MY LIFE
+"Discover everything around you."
+
+Use visual language inspired by the uploaded logo.
+
+The cards should feel like the three core products of MI PASS.
+
+==================================================
+5. RESIDENT LOGIN
+==================================================
+
+Create a secure resident authentication system.
+
+Login methods:
+
+- Mobile number
+- OTP
+- Email/password as optional future support
+
+After authentication, resident profile should contain:
+
+- Name
+- Mobile
+- Email
+- Tower/Block
+- Flat/House number
+- Floor
+- Address
+- Profile photo
+
+The resident should see personalized information after login.
+
+==================================================
+6. RESIDENT DASHBOARD
+==================================================
+
+Create a premium dashboard.
+
+Header:
+
+Good Morning, [Resident Name]
+
+Show:
+
+MY SOCIETY
+MY SERVICES
+MY LIFE
+
+Dashboard widgets:
+
+- Active Requests
+- Pending Requests
+- Completed Services
+- Society Notices
+- Upcoming Events
+- Emergency Contacts
+- Recommended Services
+- Recent Businesses
+- Saved Services
+- Recent Reviews
+
+Create a clean responsive layout.
+
+==================================================
+7. SERVICE DISCOVERY
+==================================================
+
+Resident selects:
+
+MY SERVICES
+
+Show a visual service directory.
+
+Categories should include:
+
+Home Services
+Healthcare
+Automotive
+Professional
+Emergency
+Maintenance
+Technology
+Education
+Other
+
+Each category should have subcategories.
+
+Example:
+
+Home Services
+→ Electrical
+→ Plumbing
+→ AC
+→ Cleaning
+→ Carpenter
+→ Pest Control
+
+==================================================
+8. SERVICE PROVIDER PROFILE
+==================================================
+
+Every authorized provider should have a professional profile.
+
+Display:
+
+Provider Name
+Logo/photo
+MI PASS Authorized badge
+Rating
+Number of completed services
+Experience
+Services
+Price range
+Availability
+Working hours
+Service area
+Photos
+Reviews
+Contact
+Request Service
+
+Example:
+
+--------------------------------
+MI PASS AUTHORIZED ✓
+ABC Electrical Services
+
+★★★★★ 4.8
+
+247 completed services
+
+Services:
+Electrical repair
+Wiring
+Switch replacement
+Fan installation
+
+[REQUEST SERVICE]
+--------------------------------
+
+==================================================
+9. SERVICE REQUEST SYSTEM
+==================================================
+
+When resident clicks:
+
+REQUEST SERVICE
+
+open a professional request form.
+
+Fields:
+
+Resident Name
+House/Flat Number
+Tower/Block
+Mobile
+Service
+Specific Requirement
+Description
+Preferred Date
+Preferred Time
+Urgency
+Budget
+Upload Photos
+Upload Videos
+Additional Instructions
+
+Example:
+
+Service:
+AC Repair
+
+Requirement:
+AC not cooling
+
+Description:
+"AC has been running for 30 minutes but room is not cooling."
+
+Submit.
+
+Generate unique request ID:
+
+MIPASS-2026-000001
+
+==================================================
+10. REQUEST TRACKING
+==================================================
+
+Resident should be able to track requests.
+
+Status timeline:
+
+Submitted
+↓
+Under Review
+↓
+Provider Assigned
+↓
+Provider Accepted
+↓
+Provider On The Way
+↓
+Service Started
+↓
+Service Completed
+↓
+Resident Confirmation
+↓
+Completed
+
+Show timestamps.
+
+Allow resident to cancel under defined conditions.
+
+==================================================
+11. ADMIN ASSIGNMENT SYSTEM
+==================================================
+
+All requests appear in Admin Dashboard.
+
+Admin sees:
+
+Request ID
+Resident
+House
+Service
+Description
+Date
+Time
+Urgency
+Status
+
+Admin can:
+
+- Review
+- Assign provider
+- Reassign provider
+- Reject
+- Cancel
+- Add internal notes
+- Contact resident
+- Contact provider
+
+Only AUTHORIZED providers should be selectable.
+
+Backend must enforce this rule.
+
+Do not rely only on frontend filtering.
+
+==================================================
+12. PROVIDER DASHBOARD
+==================================================
+
+Create a separate provider portal.
+
+Provider login.
+
+Dashboard:
+
+New Requests
+Accepted
+Today's Jobs
+Pending
+Completed
+Cancelled
+Reviews
+Rating
+Profile
+Documents
+Authorization
+
+Provider can:
+
+Accept
+Reject
+Start Service
+Mark On The Way
+Mark Completed
+
+Provider can upload:
+
+Before-service photos
+After-service photos
+Invoice/document
+
+Provider should only see the minimum resident information necessary to perform the service.
+
+==================================================
+13. SERVICE COMPLETION & REVIEW
+==================================================
+
+After provider marks service completed:
+
+Resident receives:
+
+"Was your service completed successfully?"
+
+Options:
+
+YES
+REPORT A PROBLEM
+
+If YES:
+
+Ask for:
+
+Overall Rating
+Service Quality
+Provider Behaviour
+Timeliness
+Value for Money
+Written Review
+Photo
+
+Review should be attached to provider.
+
+Only residents who actually received a service should be allowed to submit verified reviews.
+
+Display:
+
+✓ Verified Service Review
+
+==================================================
+14. COMPLAINT SYSTEM
+==================================================
+
+Resident can report:
+
+Poor service
+No-show
+Overcharging
+Bad behaviour
+Incomplete work
+Other problem
+
+Generate:
+
+COMP-2026-000001
+
+Complaint statuses:
+
+Open
+Investigating
+Provider Contacted
+Resident Contacted
+Resolved
+Escalated
+Rejected
+
+Admin should have complete complaint management.
+
+==================================================
+15. AUTHORIZATION SYSTEM
+==================================================
+
+This is one of the most important MI PASS features.
+
+Provider statuses:
+
+PENDING
+AUTHORIZED
+SUSPENDED
+EXPIRED
+REJECTED
+
+Only:
+
+AUTHORIZED
+
+providers can receive service requests.
+
+Admin should be able to:
+
+- Approve provider
+- Reject provider
+- Suspend provider
+- Reactivate provider
+- Set authorization expiry
+- Upload documents
+- Verify phone
+- Verify business
+- Add authorization notes
+- Assign service categories
+
+Display:
+
+✓ MI PASS AUTHORIZED
+
+with appropriate verification UI.
+
+==================================================
+16. BUSINESS DIRECTORY
+==================================================
+
+MY LIFE should contain local businesses.
+
+Each business has a profile page.
+
+Example:
+
+Bikaner
+
+Display:
+
+Logo
+Cover Image
+MI PASS status
+Rating
+Reviews
+Address
+Opening hours
+Contact
+Menu/products
+Services
+Photos
+Offers
+Location
+
+Actions:
+
+Call
+Visit
+Request
+Save
+Share
+
+==================================================
+17. CATEGORY-SPECIFIC PAGES
+==================================================
+
+Different categories should have different data structures.
+
+For CINEMA:
+
+Movies
+Show timings
+Screens
+Amenities
+Location
+Offers
+
+For HOTEL:
+
+Rooms
+Amenities
+Price
+Photos
+Availability
+Contact
+
+For RESTAURANT:
+
+Menu
+Cuisine
+Price range
+Timings
+Photos
+Offers
+Contact
+
+For SCHOOL:
+
+Classes
+Board
+Contact
+Address
+Website
+Facilities
+Admission information
+
+For SHOP:
+
+Products
+Category
+Opening hours
+Contact
+Location
+
+Do NOT create one generic template for every category.
+
+==================================================
+18. DYNAMIC CATEGORY BUILDER
+==================================================
+
+Admin must be able to create:
+
+Category
+Subcategory
+Service
+Business type
+Custom fields
+
+Example:
+
+Food
+→ Restaurant
+→ North Indian
+
+OR
+
+Home Services
+→ AC Services
+→ AC Repair
+
+OR
+
+Entertainment
+→ Cinema
+→ Cinema Hall
+
+Admin should be able to add new categories without developer intervention.
+
+==================================================
+19. SEARCH ENGINE
+==================================================
+
+Create powerful global search.
+
+Search:
+
+"AC repair"
+"hotel"
+"Bikaner"
+"cinema"
+"doctor"
+"electrician"
+"restaurant"
+
+Return:
+
+Categories
+Businesses
+Providers
+Services
+
+Filters:
+
+Authorized only
+Rating
+Availability
+Price
+Open Now
+Emergency
+Category
+
+Search should support typo tolerance and partial matching.
+
+==================================================
+20. MY SOCIETY MODULE
+==================================================
+
+Create a complete community section.
+
+Features:
+
+Announcements
+Notices
+Events
+Emergency Contacts
+Important Contacts
+Society Rules
+Facilities
+Maintenance Information
+Security
+Helpdesk
+Complaints
+
+Example homepage:
+
+Latest Notice
+Upcoming Event
+Security Alert
+Community Announcement
+
+==================================================
+21. EMERGENCY CENTER
+==================================================
+
+Create a dedicated emergency interface.
+
+Categories:
+
+Medical
+Fire
+Security
+Police
+Ambulance
+Electrical
+Plumbing
+Other
+
+Emergency interface should be visually distinct.
+
+Include confirmation before non-trivial actions.
+
+==================================================
+22. ADMIN DASHBOARD
+==================================================
+
+Create enterprise-level admin dashboard.
+
+Metrics:
+
+Total Residents
+Total Providers
+Authorized Providers
+Pending Providers
+Active Requests
+Completed Requests
+Complaints
+Average Rating
+Total Businesses
+Categories
+
+Charts:
+
+Requests by Category
+Requests by Month
+Provider Performance
+Average Response Time
+Completion Rate
+Complaint Rate
+Resident Satisfaction
+
+==================================================
+23. PROVIDER ANALYTICS
+==================================================
+
+Admin can see:
+
+Requests
+Accepted
+Rejected
+Completed
+Cancelled
+Average Rating
+Complaints
+Response Time
+Completion Rate
+
+Calculate:
+
+Provider Performance Score
+
+Example:
+
+92 / 100
+
+==================================================
+24. RESIDENT PRIVACY
+==================================================
+
+Protect resident information.
+
+Provider should NOT see:
+
+- unnecessary personal information
+- other resident data
+- admin notes
+- internal complaint details
+
+Use role-based access control.
+
+==================================================
+25. NOTIFICATION SYSTEM
+==================================================
+
+Notifications for:
+
+Service request created
+Provider assigned
+Provider accepted
+Provider rejected
+Provider on way
+Service started
+Service completed
+Review reminder
+Complaint update
+Society announcement
+Event reminder
+Authorization changes
+
+Design notification architecture for future:
+
+SMS
+WhatsApp
+Email
+Push notifications
+
+==================================================
+26. DATABASE
+==================================================
+
+Use a proper relational architecture.
+
+Recommended:
+
+PostgreSQL
+
+Core tables:
+
+users
+residents
+providers
+businesses
+categories
+subcategories
+services
+provider_services
+provider_documents
+authorizations
+service_requests
+request_status_history
+assignments
+reviews
+complaints
+notifications
+addresses
+media
+offers
+society_notices
+events
+audit_logs
+
+Use:
+
+Primary keys
+Foreign keys
+Indexes
+Constraints
+Timestamps
+Soft deletion where appropriate
+
+==================================================
+27. TECH STACK
+==================================================
+
+Use modern production-ready technologies.
+
+Frontend:
+
+Next.js
+React
+TypeScript
+Tailwind CSS
+
+Backend:
+
+Python
+FastAPI
+
+Database:
+
+PostgreSQL
+
+Caching/background processing:
+
+Redis
+
+Authentication:
+
+Secure JWT/session architecture
+OTP-ready authentication
+
+File storage:
+
+Object-storage compatible architecture
+
+Development:
+
+Git
+GitHub
+Docker
+
+API testing:
+
+Postman compatible
+
+==================================================
+28. API DESIGN
+==================================================
+
+Create clean REST APIs.
+
+Examples:
+
+POST /api/auth/login
+POST /api/auth/verify-otp
+
+GET /api/categories
+GET /api/services
+GET /api/providers
+GET /api/providers/{id}
+
+POST /api/service-requests
+GET /api/service-requests
+GET /api/service-requests/{id}
+
+PATCH /api/service-requests/{id}/status
+
+POST /api/reviews
+POST /api/complaints
+
+GET /api/admin/dashboard
+
+POST /api/admin/providers/{id}/authorize
+
+PATCH /api/admin/providers/{id}/status
+
+Use proper:
+
+HTTP status codes
+Validation
+Error responses
+Authentication
+Authorization
+
+==================================================
+29. SECURITY
+==================================================
+
+Implement:
+
+Authentication
+Authorization
+Role-based access control
+Password hashing
+Input validation
+SQL injection protection
+XSS protection
+CSRF protection where applicable
+Rate limiting
+Secure uploads
+Audit logs
+API security
+Session security
+
+Never expose secrets in frontend code.
+
+Use environment variables.
+
+==================================================
+30. USER ROLES
+==================================================
+
+Create:
+
+SUPER ADMIN
+ADMIN
+SERVICE MANAGER
+PROVIDER
+BUSINESS OWNER
+RESIDENT
+
+Each role must have different permissions.
+
+==================================================
+31. VISUAL DESIGN SYSTEM
+==================================================
+
+Use the uploaded MI PASS logo as the design source.
+
+The logo contains:
+
+- Deep navy
+- Purple
+- Magenta
+- Red
+- Orange
+- Green
+- White
+
+Create a refined design system based on these colors.
+
+IMPORTANT:
+
+Do not use every color everywhere.
+
+Use:
+
+Navy for trust/navigation
+Purple for primary brand actions
+Gradient accents for important brand moments
+Green for verified/success
+Orange for lifestyle/action
+Red only for warnings/emergency
+
+The overall UI must remain elegant and professional.
+
+==================================================
+32. DESIGN LANGUAGE
+==================================================
+
+Design should be:
+
+Premium
+Modern
+High-tech
+Trustworthy
+Friendly
+Community-oriented
+Minimal
+Professional
+
+Use:
+
+Large typography
+Rounded cards
+Subtle shadows
+Clean grids
+Premium icons
+Smooth transitions
+Micro-interactions
+Modern dashboard layouts
+
+Avoid:
+
+Excessive gradients
+Neon effects
+Over-animation
+Clutter
+Cheap-looking UI
+Generic templates
+
+==================================================
+33. RESPONSIVE DESIGN
+==================================================
+
+Desktop:
+
+Full navigation
+Large dashboards
+Multi-column layouts
+
+Tablet:
+
+Adaptive grid
+
+Mobile:
+
+Bottom navigation:
+
+Home
+Society
+Services
+Life
+Profile
+
+Service request forms must be extremely easy to use on mobile.
+
+==================================================
+34. MOBILE EXPERIENCE
+==================================================
+
+The mobile experience should feel almost like a native application.
+
+Use:
+
+Bottom navigation
+Floating actions
+Swipeable cards
+Quick service buttons
+One-tap request
+Notification center
+
+Priority:
+
+Fast service discovery.
+
+A resident should be able to request an electrician in under one minute.
+
+==================================================
+35. AI READY ARCHITECTURE
+==================================================
+
+Prepare the platform for an AI assistant.
+
+Example:
+
+Resident:
+
+"I need an AC technician tomorrow evening."
+
+AI understands:
+
+Service = AC Repair
+Date = Tomorrow
+Time = Evening
+Location = Resident address
+
+Then returns:
+
+Authorized available providers.
+
+Other queries:
+
+"Find a good restaurant."
+
+"I need a plumber urgently."
+
+"Show hotels."
+
+"Where can I get groceries?"
+
+AI must respect platform authorization and business rules.
+
+AI must never bypass provider authorization.
+
+==================================================
+36. ANALYTICS
+==================================================
+
+Track:
+
+Popular searches
+Popular categories
+Most requested services
+Peak request times
+Provider response time
+Completion rate
+Resident satisfaction
+Complaint rate
+Search-to-request conversion
+
+Create admin analytics.
+
+==================================================
+37. PERFORMANCE
+==================================================
+
+Application must be optimized for:
+
+Fast page loading
+Lazy loading
+Image optimization
+API caching
+Pagination
+Database indexes
+Efficient queries
+Responsive rendering
+
+Do not load unnecessary data.
+
+==================================================
+38. ACCESSIBILITY
+==================================================
+
+Follow modern accessibility practices.
+
+Use:
+
+Proper semantic HTML
+Keyboard navigation
+Readable contrast
+Accessible forms
+ARIA where required
+Visible focus states
+Accessible buttons
+
+==================================================
+39. SEO
+==================================================
+
+Public pages should support:
+
+SEO-friendly URLs
+Metadata
+Open Graph
+Structured data where applicable
+Sitemap
+Robots.txt
+
+Examples:
+
+/services/ac-repair
+/businesses/bikaner
+/businesses/restaurants
+/hotels
+/cinema
+
+==================================================
+40. DEMO DATA
+==================================================
+
+Create realistic demo data for HL City.
+
+Include examples:
+
+Bikaner
+Restaurant
+Cinema
+Hotel
+Electrician
+Plumber
+AC Repair
+Doctor
+Pharmacy
+School
+Car Wash
+Grocery
+Salon
+Gym
+
+Clearly identify demo records internally where necessary.
+
+==================================================
+41. IMPORTANT BUSINESS RULES
+==================================================
+
+RULE 1:
+
+Only AUTHORIZED providers can receive service requests.
+
+RULE 2:
+
+Only residents who actually completed a service can submit verified reviews.
+
+RULE 3:
+
+Suspended providers cannot receive new requests.
+
+RULE 4:
+
+Expired authorization cannot receive new requests.
+
+RULE 5:
+
+Provider cannot access another provider's data.
+
+RULE 6:
+
+Resident cannot access another resident's private information.
+
+RULE 7:
+
+Admin actions should be logged.
+
+==================================================
+42. FUTURE EXPANSION
+==================================================
+
+Architecture should support future modules:
+
+Digital Resident ID
+Digital MI PASS Card
+Visitor Pass
+Parking
+Maintenance Payments
+Facility Booking
+Clubhouse Booking
+Sports Booking
+Delivery Management
+Domestic Help
+Community Marketplace
+Offers
+Coupons
+Loyalty Points
+Wallet
+Subscriptions
+Online Payments
+AI Assistant
+Smart City Integrations
+
+Do not implement every future feature now.
+
+Make the architecture modular so they can be added later.
+
+==================================================
+43. MI PASS DIGITAL IDENTITY
+==================================================
+
+Create a future-ready MI PASS resident identity.
+
+Resident can eventually have:
+
+MI PASS ID
+
+Example:
+
+MP-HLC-000124
+
+This ID can connect:
+
+Resident
+Society
+Services
+Requests
+Reviews
+Bookings
+Community activity
+
+Do not expose sensitive information publicly.
+
+==================================================
+44. FINAL USER JOURNEY
+==================================================
+
+The complete journey should feel like:
+
+OPEN MI PASS
+
+↓
+
+Login
+
+↓
+
+Welcome to HL City
+
+↓
+
+MY SOCIETY
+MY SERVICES
+MY LIFE
+
+↓
+
+Resident chooses:
+
+"I need AC Repair"
+
+↓
+
+Select service
+
+↓
+
+See authorized providers
+
+↓
+
+Submit requirement
+
+↓
+
+MI PASS assigns provider
+
+↓
+
+Provider accepts
+
+↓
+
+Provider visits resident's home
+
+↓
+
+Service completed
+
+↓
+
+Resident confirms
+
+↓
+
+Resident gives review
+
+↓
+
+Provider performance updates
+
+↓
+
+Admin analytics update
+
+This complete workflow must be functional.
+
+==================================================
+45. FINAL QUALITY STANDARD
+==================================================
+
+Do not build a prototype that only looks good.
+
+Build a real full-stack application architecture.
+
+The final application must have:
+
+- Production-quality UI
+- Functional frontend
+- Functional backend
+- Functional database
+- Authentication
+- Authorization
+- Role-based access
+- Service workflow
+- Provider workflow
+- Admin workflow
+- Reviews
+- Complaints
+- Notifications
+- Search
+- Analytics
+- Responsive design
+- Security
+- Scalable architecture
+
+Every major button should either perform a real action or clearly indicate that the feature is coming soon.
+
+Do not create fake functionality.
+
+==================================================
+46. DEVELOPMENT APPROACH
+==================================================
+
+Build the product in phases.
+
+PHASE 1:
+
+Branding
+Homepage
+Authentication
+Resident dashboard
+My Society
+My Services
+My Life
+Categories
+Provider profiles
+
+PHASE 2:
+
+Service request system
+Admin assignment
+Provider dashboard
+Request tracking
+Reviews
+Complaints
+
+PHASE 3:
+
+Business directory
+Hotels
+Restaurants
+Cinema
+Bikaner
+Schools
+Shopping
+Lifestyle
+
+PHASE 4:
+
+Analytics
+Notifications
+Advanced search
+Authorization management
+
+PHASE 5:
+
+AI assistant
+Payments
+Digital MI PASS
+Facility booking
+Advanced community features
+
+Do not sacrifice architecture quality for speed.
+
+==================================================
+47. MOST IMPORTANT DESIGN PRINCIPLE
+==================================================
+
+MI PASS should feel like:
+
+"One digital identity for life inside HL City."
+
+The three pillars must always remain visually and conceptually clear:
+
+MY SOCIETY
+MY SERVICES
+MY LIFE
+
+The uploaded logo represents this concept.
+
+Use that identity consistently throughout the entire application.
+
+The final result should look like a serious, scalable technology product that could eventually be deployed across multiple societies/cities, while the first implementation is specifically optimized for HL City.
+
+Start by creating the complete application architecture, design system, database schema, route structure and core UI.
+
+Then implement the MVP end-to-end.
+
+Do not stop at a static landing page.
