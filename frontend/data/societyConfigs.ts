@@ -1,6 +1,5 @@
 export interface SocietyEmergencyContact {
   id: string;
-  category: "Security" | "Medical" | "Fire" | "Police" | "Estate Control Room";
   name: string;
   role: string;
   phone: string;
@@ -67,11 +66,11 @@ export const DEMO_SOCIETIES: Record<string, SocietyConfig> = {
     ],
     amenitiesCount: 16,
     emergencyContacts: [
-      { id: "em-1", category: "Security", name: "Main Security Gate & Guard Desk", role: "Security Chief", phone: "+91 98765 00001", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "ShieldAlert" },
-      { id: "em-2", category: "Medical", name: "On-site Paramedic & First Aid Station", role: "Resident Medical Team", phone: "+91 98765 00002", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "Ambulance" },
-      { id: "em-3", category: "Fire", name: "Fire Safety & Hydrant Control Room", role: "Fire Officer", phone: "+91 98765 00003", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "Flame" },
-      { id: "em-4", category: "Police", name: "District Police Station Patrol Control", role: "Police PCR Van", phone: "112", availableHours: "24/7 Emergency", priority: "CRITICAL", iconName: "Shield" },
-      { id: "em-5", category: "Estate Control Room", name: "Grand Estate Management Control Desk", role: "Estate Operations", phone: "+91 98765 00005", availableHours: "24/7 Live", priority: "HIGH", iconName: "Zap" }
+      { id: "em-1", name: "Main Security Gate & Guard Desk", role: "Security Chief", phone: "+91 98765 00001", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "ShieldAlert" },
+      { id: "em-2", name: "On-site Paramedic & First Aid Station", role: "Resident Medical Team", phone: "+91 98765 00002", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "Ambulance" },
+      { id: "em-3", name: "Fire Safety & Hydrant Control Room", role: "Fire Officer", phone: "+91 98765 00003", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "Flame" },
+      { id: "em-4", name: "District Police Station Patrol Control", role: "Police PCR Van", phone: "112", availableHours: "24/7 Emergency", priority: "CRITICAL", iconName: "Shield" },
+      { id: "em-5", name: "Grand Estate Management Control Desk", role: "Estate Operations", phone: "+91 98765 00005", availableHours: "24/7 Live", priority: "HIGH", iconName: "Zap" }
     ],
     featuresList: [
       "Visitor QR Gate Passes",
@@ -105,11 +104,11 @@ export const DEMO_SOCIETIES: Record<string, SocietyConfig> = {
       { id: "gw-3", name: "Maple Tower", totalFloors: 25, totalFlats: 200, elevators: 4 }
     ],
     emergencyContacts: [
-      { id: "em-gw1", category: "Security", name: "Greenwood Gate Security Control", role: "Security Gate", phone: "+91 98765 99901", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "ShieldAlert" },
-      { id: "em-gw2", category: "Medical", name: "Greenwood Emergency Medical Desk", role: "First Aid Unit", phone: "+91 98765 99902", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "Ambulance" },
-      { id: "em-gw3", category: "Fire", name: "District Fire Services", role: "Fire Response", phone: "101", availableHours: "24/7 Emergency", priority: "CRITICAL", iconName: "Flame" },
-      { id: "em-gw4", category: "Police", name: "Sector 52 Police Patrol", role: "Local Police Desk", phone: "112", availableHours: "24/7 Emergency", priority: "CRITICAL", iconName: "Shield" },
-      { id: "em-gw5", category: "Estate Control Room", name: "Greenwood Estate Management Desk", role: "Control Room", phone: "+91 98765 99905", availableHours: "24/7 Live", priority: "HIGH", iconName: "Zap" }
+      { id: "em-gw1", name: "Greenwood Gate Security Control", role: "Security Gate", phone: "+91 98765 99901", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "ShieldAlert" },
+      { id: "em-gw2", name: "Greenwood Emergency Medical Desk", role: "First Aid Unit", phone: "+91 98765 99902", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "Ambulance" },
+      { id: "em-gw3", name: "District Fire Services", role: "Fire Response", phone: "101", availableHours: "24/7 Emergency", priority: "CRITICAL", iconName: "Flame" },
+      { id: "em-gw4", name: "Sector 52 Police Patrol", role: "Local Police Desk", phone: "112", availableHours: "24/7 Emergency", priority: "CRITICAL", iconName: "Shield" },
+      { id: "em-gw5", name: "Greenwood Estate Management Desk", role: "Control Room", phone: "+91 98765 99905", availableHours: "24/7 Live", priority: "HIGH", iconName: "Zap" }
     ],
     featuresList: [
       "Solar Power Telemetry",
@@ -142,11 +141,11 @@ export const DEMO_SOCIETIES: Record<string, SocietyConfig> = {
     ],
     amenitiesCount: 20,
     emergencyContacts: [
-      { id: "em-rp1", category: "Security", name: "Royal Palms Concierge Security Desk", role: "Villa Security", phone: "+91 98765 88801", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "ShieldAlert" },
-      { id: "em-rp2", category: "Medical", name: "Estate Medical Rapid Response", role: "Doctor on Call", phone: "+91 98765 88802", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "Ambulance" },
-      { id: "em-rp3", category: "Fire", name: "Villa Fire Hydrant Response Desk", role: "Fire Officer", phone: "+91 98765 88803", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "Flame" },
-      { id: "em-rp4", category: "Police", name: "Golf Course Police Control", role: "Police Patrol", phone: "112", availableHours: "24/7 Emergency", priority: "CRITICAL", iconName: "Shield" },
-      { id: "em-rp5", category: "Estate Control Room", name: "Royal Palms Master Control Room", role: "Control Room", phone: "+91 98765 88805", availableHours: "24/7 Live", priority: "HIGH", iconName: "Zap" }
+      { id: "em-rp1", name: "Royal Palms Concierge Security Desk", role: "Villa Security", phone: "+91 98765 88801", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "ShieldAlert" },
+      { id: "em-rp2", name: "Estate Medical Rapid Response", role: "Doctor on Call", phone: "+91 98765 88802", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "Ambulance" },
+      { id: "em-rp3", name: "Villa Fire Hydrant Response Desk", role: "Fire Officer", phone: "+91 98765 88803", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "Flame" },
+      { id: "em-rp4", name: "Golf Course Police Control", role: "Police Patrol", phone: "112", availableHours: "24/7 Emergency", priority: "CRITICAL", iconName: "Shield" },
+      { id: "em-rp5", name: "Royal Palms Master Control Room", role: "Control Room", phone: "+91 98765 88805", availableHours: "24/7 Live", priority: "HIGH", iconName: "Zap" }
     ],
     featuresList: [
       "Private Chef & Valet On Demand",
@@ -178,11 +177,11 @@ export const DEMO_SOCIETIES: Record<string, SocietyConfig> = {
     ],
     amenitiesCount: 16,
     emergencyContacts: [
-      { id: "em-hl1", category: "Security", name: "Main Security Gate", role: "Security Desk", phone: "+91 98765 00001", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "ShieldAlert" },
-      { id: "em-hl2", category: "Medical", name: "Emergency Medical Desk", role: "Medical Unit", phone: "+91 98765 00002", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "Ambulance" },
-      { id: "em-hl3", category: "Fire", name: "Township Fire Control Desk", role: "Fire Safety", phone: "+91 98765 00003", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "Flame" },
-      { id: "em-hl4", category: "Police", name: "Local Police PCR Station", role: "Police", phone: "112", availableHours: "24/7 Emergency", priority: "CRITICAL", iconName: "Shield" },
-      { id: "em-hl5", category: "Estate Control Room", name: "Residential OS Control Desk", role: "Estate Office", phone: "+91 98765 00005", availableHours: "24/7 Live", priority: "HIGH", iconName: "Zap" }
+      { id: "em-hl1", name: "Main Security Gate", role: "Security Desk", phone: "+91 98765 00001", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "ShieldAlert" },
+      { id: "em-hl2", name: "Emergency Medical Desk", role: "Medical Unit", phone: "+91 98765 00002", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "Ambulance" },
+      { id: "em-hl3", name: "Township Fire Control Desk", role: "Fire Safety", phone: "+91 98765 00003", availableHours: "24/7 Live", priority: "CRITICAL", iconName: "Flame" },
+      { id: "em-hl4", name: "Local Police PCR Station", role: "Police", phone: "112", availableHours: "24/7 Emergency", priority: "CRITICAL", iconName: "Shield" },
+      { id: "em-hl5", name: "Residential OS Control Desk", role: "Estate Office", phone: "+91 98765 00005", availableHours: "24/7 Live", priority: "HIGH", iconName: "Zap" }
     ],
     featuresList: [
       "Visitor QR Gate Passes",

@@ -44,13 +44,20 @@ export const EmergencyHubModule: React.FC = () => {
   const emergencyContacts = society.emergencyContacts || [];
 
   const medicalPhone =
-    emergencyContacts[0]?.phone || "+91 98765 00002";
+    emergencyContacts.find(c => c.name?.toLowerCase().includes("medical"))?.phone ||
+    emergencyContacts[0]?.phone ||
+    "+91 98765 00002";
 
   const firePhone =
-    emergencyContacts[1]?.phone || "101";
+    emergencyContacts.find(c => c.name?.toLowerCase().includes("fire"))?.phone ||
+    emergencyContacts[1]?.phone ||
+    "101";
 
   const estateControlPhone =
-    emergencyContacts[2]?.phone || society.supportPhone || "112";
+    emergencyContacts.find(c => c.name?.toLowerCase().includes("estate"))?.phone ||
+    emergencyContacts[2]?.phone ||
+    society.supportPhone ||
+    "112";
 
   const iconMap: Record<string, React.ReactNode> = {
     ShieldAlert: <ShieldAlert className="w-5 h-5" />,

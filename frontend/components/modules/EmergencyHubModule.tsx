@@ -47,14 +47,14 @@ export const EmergencyHubModule: React.FC = () => {
     {
       category: "Medical",
       title: "Medical & Ambulance",
-      phone: society.emergencyContacts.find(c => c.category === "Medical")?.phone || "+91 98765 00002",
+      phone: society.emergencyContacts.find(c => c.name?.toLowerCase().includes("medical"))?.phone || "+91 98765 00002",
       icon: <Ambulance className="w-5 h-5" />,
       description: "Immediate dispatch request for on-site paramedic team and rapid ambulance gate clearance.",
     },
     {
       category: "Fire",
       title: "Fire Safety Desk",
-      phone: society.emergencyContacts.find(c => c.category === "Fire")?.phone || "101",
+      phone: society.emergencyContacts.find(c => c.name?.toLowerCase().includes("fire"))?.phone || "101",
       icon: <Flame className="w-5 h-5" />,
       description: "Emergency alert to Estate Fire Safety Officer and automatic lift safety lockout protocol.",
     },
@@ -68,7 +68,7 @@ export const EmergencyHubModule: React.FC = () => {
     {
       category: "Estate Control Room",
       title: "Estate Control Room",
-      phone: society.emergencyContacts.find(c => c.category === "Estate Control Room")?.phone || society.supportPhone,
+      phone: society.emergencyContacts.find(c => c.name?.toLowerCase().includes("estate"))?.phone || society.supportPhone,
       icon: <Zap className="w-5 h-5" />,
       description: "24/7 Estate Control Desk for power grid outages, elevator trapping, gas leak, or flooding emergencies.",
     },
@@ -170,7 +170,7 @@ export const EmergencyHubModule: React.FC = () => {
                   <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
                     contact.priority === "CRITICAL" ? "bg-red-600 text-white" : "bg-neutral-200 text-neutral-800"
                   }`}>
-                    {contact.category} • {contact.priority}
+                    {contact.role} • {contact.priority}
                   </span>
                 </div>
 
@@ -186,7 +186,7 @@ export const EmergencyHubModule: React.FC = () => {
                 <div className="grid grid-cols-2 gap-2">
                   <button
                     onClick={() => setConfirmContact({
-                      category: contact.category,
+                      category: contact.role,
                       name: contact.name,
                       phone: contact.phone,
                       description: `Initiating direct emergency phone call to ${contact.name} (${contact.phone}).`
@@ -198,7 +198,7 @@ export const EmergencyHubModule: React.FC = () => {
 
                   <button
                     onClick={() => setConfirmContact({
-                      category: contact.category,
+                      category: contact.role,
                       name: contact.name,
                       phone: contact.phone,
                       description: `Dispatching instant SOS signal for Vikram (Apt 204, Tower A) to ${contact.name}.`

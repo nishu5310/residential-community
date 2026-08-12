@@ -81,15 +81,13 @@ export const GlobalSearchModal: React.FC = () => {
     id: c.id,
     name: c.name,
     role: c.role,
-    phone: c.phone,
-    category: c.category
+    phone: c.phone
   }));
   const matchedContacts = q
     ? allContacts.filter(
         (c) =>
           c.name.toLowerCase().includes(q) ||
-          c.role.toLowerCase().includes(q) ||
-          c.category.toLowerCase().includes(q)
+          c.role.toLowerCase().includes(q)
       ).slice(0, 3)
     : [];
 
@@ -248,7 +246,7 @@ export const GlobalSearchModal: React.FC = () => {
                       >
                         <div>
                           <div className="font-bold text-neutral-900">{c.name}</div>
-                          <div className="text-neutral-500 text-[11px]">{c.role} • {c.category}</div>
+                          <div className="text-neutral-500 text-[11px]">{c.role}</div>
                         </div>
                         <span className="font-mono font-bold text-emerald-700">{c.phone}</span>
                       </div>
