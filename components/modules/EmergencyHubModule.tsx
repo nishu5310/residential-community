@@ -2,24 +2,32 @@
 
 import React, { useState } from "react";
 import { useSociety } from "@/context/SocietyContext";
-import { 
-  ShieldAlert, 
-  PhoneCall, 
-  Ambulance, 
-  Flame, 
-  Shield, 
-  Zap, 
+import {
+  ShieldAlert,
+  PhoneCall,
+  Ambulance,
+  Flame,
+  Shield,
+  Zap,
   Droplets,
   CheckCircle2,
   Bell,
   X,
-  AlertTriangle
+  AlertTriangle,
+  Building2,
 } from "lucide-react";
 
 export const EmergencyHubModule: React.FC = () => {
   const { society } = useSociety();
+
   const [sosTriggered, setSosTriggered] = useState<string | null>(null);
-  const [confirmContact, setConfirmContact] = useState<{ name: string; phone: string } | null>(null);
+
+  const [confirmContact, setConfirmContact] = useState<{
+    category: string;
+    name: string;
+    phone: string;
+    description: string;
+  } | null>(null);
 
   const iconMap: Record<string, React.ReactNode> = {
     ShieldAlert: <ShieldAlert className="w-5 h-5" />,
@@ -27,202 +35,359 @@ export const EmergencyHubModule: React.FC = () => {
     Flame: <Flame className="w-5 h-5" />,
     Zap: <Zap className="w-5 h-5" />,
     Droplets: <Droplets className="w-5 h-5" />,
-    Shield: <Shield className="w-5 h-5" />
+    Shield: <Shield className="w-5 h-5" />,
+  };
+
+  /*
+   * SocietyEmergencyContact does not contain a "category" property.
+   * Therefore we safely use the configured contact positions and
+   * fallback numbers instead of accessing c.category.
+   */
+  const emergencyContacts = society.emergencyContacts ?? [];
+
+  const medicalPhone =
+    emergencyContacts[0]?.phone || "+91 98765 00002";
+
+  const firePhone =
+    emergencyContacts[1]?.phone || "101";
+
+  const estateControlPhone =
+    emergencyContacts[2]?.phone || society.supportPhone;
+
+  const emergencyCategories = [
+    {
+      category: "Security",
+      title: "Main Security Gate",
+      phone: society.gatePhone,
+      icon: <Shield className="w-5 h-5" />,
+      description:
+        "Direct connection to Main Gate Security Officers for unauthorized entry, gate issues, or security concerns.",
+    },
+    {
+      category: "Medical",
+      title: "Medical & Ambulance",
+      phone: medicalPhone,
+      icon: <Ambulance className="w-5 h-5" />,
+      description:
+        "Immediate dispatch request for on-site paramedic team and rapid ambulance gate clearance.",
+    },
+    {
+      category: "Fire",
+      title: "Fire Safety Desk",
+      phone: firePhone,
+      icon: <Flame className="w-5 h-5" />,
+      description:
+        "Emergency alert to Estate Fire Safety Officer and automatic lift safety lockout protocol.",
+    },
+    {
+      category: "Police",
+      title: "Local Police PCR Patrol",
+      phone: "112",
+      icon: <ShieldAlert className="w-5 h-5" />,
+      description:
+        "Direct dispatch signal to District Police Emergency PCR Patrol Control.",
+    },
+    {
+      category: "Estate Control Room",
+      title: "Estate Control Room",
+      phone: estateControlPhone,
+      icon: <Zap className="w-5 h-5" />,
+      description:
+        "24/7 Estate Control Desk for power grid outages, elevator trapping, gas leak, or flooding emergencies.",
+    },
+  ];
+
+  const handleEmergencyClick = (
+    contact: (typeof emergencyCategories)[number]
+  ) => {
+    setConfirmContact({
+      category: contact.category,
+      name: contact.title,
+      phone: contact.phone,
+      description: contact.description,
+    });
   };
 
   const handleConfirmDispatch = () => {
     if (!confirmContact) return;
+
     setSosTriggered(confirmContact.name);
+
     setConfirmContact(null);
+
+    // Automatically open the phone dialer on supported devices.
+    if (confirmContact.phone) {
+      window.location.href = `tel:${confirmContact.phone.replace(
+        /[^0-9+]/g,
+        ""
+      )}`;
+    }
+
+    // Remove success message after a few seconds.
     setTimeout(() => {
       setSosTriggered(null);
-    }, 4000);
+    }, 5000);
+  };
+
+  const handleCloseConfirmation = () => {
+    setConfirmContact(null);
   };
 
   return (
-    <div className="space-y-6 animate-in fade-in duration-300">
-      
-      {/* Emergency Header Alert Banner */}
-      <div className="bg-red-600 text-white rounded-2xl p-6 shadow-md relative overflow-hidden border border-red-700">
-        <div className="max-w-2xl space-y-2 relative z-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-800/80 text-white text-xs font-bold uppercase tracking-wider">
-            <ShieldAlert className="w-4 h-4 animate-pulse" /> 24/7 Live Emergency Control
+    <div className="w-full space-y-6">
+      {/* Header */}
+      <div className="rounded-2xl border border-red-200 bg-gradient-to-r from-red-50 via-white to-orange-50 p-5 shadow-sm">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-start gap-4">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-100 text-red-600">
+              <ShieldAlert className="h-6 w-6" />
+            </div>
+
+            <div>
+              <h2 className="text-xl font-bold text-gray-900">
+                Emergency Hub
+              </h2>
+
+              <p className="mt-1 text-sm text-gray-600">
+                Quick access to security, medical, fire, police and estate
+                emergency services.
+              </p>
+            </div>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-bold">Society Emergency Control Desk</h1>
-          <p className="text-xs sm:text-sm text-red-100 leading-relaxed">
-            Instant connection to Main Gate Security, On-Site Paramedic, Fire Safety Team & Local Police.
+
+          <div className="flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-3 py-2 text-xs font-semibold text-green-700">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
+            Emergency Services Available
+          </div>
+        </div>
+      </div>
+
+      {/* Success notification */}
+      {sosTriggered && (
+        <div className="flex items-start gap-3 rounded-xl border border-green-200 bg-green-50 p-4 text-green-800 shadow-sm">
+          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" />
+
+          <div className="flex-1">
+            <p className="font-semibold">
+              Emergency contact initiated
+            </p>
+
+            <p className="mt-1 text-sm text-green-700">
+              Connecting you with {sosTriggered}.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setSosTriggered(null)}
+            className="rounded-lg p-1 hover:bg-green-100"
+            aria-label="Close notification"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+      )}
+
+      {/* Emergency warning */}
+      <div className="flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 p-4">
+        <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
+
+        <div>
+          <p className="font-semibold text-amber-900">
+            For life-threatening emergencies
+          </p>
+
+          <p className="mt-1 text-sm text-amber-800">
+            Call the appropriate emergency service immediately. Do not wait
+            for a response through the community portal.
           </p>
         </div>
       </div>
 
-      {/* 4 Primary Emergency Actions */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <button
-          onClick={() => setConfirmContact({ name: "Security Gate Desk", phone: society.gatePhone })}
-          className="saas-card p-4 text-center border-red-200 bg-red-50/60 hover:bg-red-100/60 transition-colors space-y-2 min-h-[100px] flex flex-col justify-center items-center"
-        >
-          <div className="w-10 h-10 bg-red-600 text-white rounded-xl flex items-center justify-center mx-auto shadow-xs">
-            <Shield className="w-5 h-5" />
-          </div>
-          <div className="font-bold text-xs text-red-900">Security</div>
-        </button>
-
-        <button
-          onClick={() => setConfirmContact({ name: "Medical Emergency & Paramedic", phone: "+91 98765 10202" })}
-          className="saas-card p-4 text-center border-red-200 bg-red-50/60 hover:bg-red-100/60 transition-colors space-y-2 min-h-[100px] flex flex-col justify-center items-center"
-        >
-          <div className="w-10 h-10 bg-red-600 text-white rounded-xl flex items-center justify-center mx-auto shadow-xs">
-            <Ambulance className="w-5 h-5" />
-          </div>
-          <div className="font-bold text-xs text-red-900">Medical</div>
-        </button>
-
-        <button
-          onClick={() => setConfirmContact({ name: "Fire Safety Desk", phone: "101" })}
-          className="saas-card p-4 text-center border-red-200 bg-red-50/60 hover:bg-red-100/60 transition-colors space-y-2 min-h-[100px] flex flex-col justify-center items-center"
-        >
-          <div className="w-10 h-10 bg-red-600 text-white rounded-xl flex items-center justify-center mx-auto shadow-xs">
-            <Flame className="w-5 h-5" />
-          </div>
-          <div className="font-bold text-xs text-red-900">Fire</div>
-        </button>
-
-        <button
-          onClick={() => setConfirmContact({ name: "Gate / Security Desk", phone: society.gatePhone })}
-          className="saas-card p-4 text-center border-red-200 bg-red-50/60 hover:bg-red-100/60 transition-colors space-y-2 min-h-[100px] flex flex-col justify-center items-center"
-        >
-          <div className="w-10 h-10 bg-red-600 text-white rounded-xl flex items-center justify-center mx-auto shadow-xs">
-            <PhoneCall className="w-5 h-5" />
-          </div>
-          <div className="font-bold text-xs text-red-900">Gate / Security Desk</div>
-        </button>
-      </div>
-
-      {sosTriggered && (
-        <div className="bg-red-50 border border-red-300 text-red-900 p-4 rounded-xl font-semibold text-xs sm:text-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <ShieldAlert className="w-5 h-5 text-red-600 shrink-0" />
-            <div>
-              <div className="font-bold">DIRECT CALL CONNECTED: {sosTriggered.toUpperCase()}</div>
-              <div className="text-[11px] font-normal text-red-700 mt-0.5">Contacting desk for Unit Apt 204, Tower A.</div>
-            </div>
-          </div>
-          <a
-            href={`tel:${society.gatePhone}`}
-            className="text-xs bg-red-600 hover:bg-red-700 text-white px-3.5 py-2 rounded-lg shrink-0 text-center font-bold"
-          >
-            Dial Direct
-          </a>
-        </div>
-      )}
-
-      {/* Emergency Contacts Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {society.emergencyContacts.map((contact) => (
+      {/* Emergency Cards */}
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {emergencyCategories.map((contact) => (
           <div
-            key={contact.id}
-            className={`saas-card p-5 space-y-4 flex flex-col justify-between ${
-              contact.priority === "CRITICAL" ? "border-red-300 bg-red-50/20" : ""
-            }`}
+            key={contact.category}
+            className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-md"
           >
-            <div className="space-y-2">
-              <div className="flex items-start justify-between">
-                <div className="p-2.5 bg-red-600 text-white rounded-xl shadow-xs">
-                  {iconMap[contact.iconName] || <ShieldAlert className="w-5 h-5" />}
+            {/* Top section */}
+            <div className="flex items-start justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gray-100 text-gray-700 transition-colors group-hover:bg-red-50 group-hover:text-red-600">
+                  {contact.icon}
                 </div>
-                <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-                  contact.priority === "CRITICAL" ? "bg-red-600 text-white" : "bg-neutral-200 text-neutral-800"
-                }`}>
-                  {contact.priority}
-                </span>
+
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+                    {contact.category}
+                  </p>
+
+                  <h3 className="mt-0.5 font-bold text-gray-900">
+                    {contact.title}
+                  </h3>
+                </div>
               </div>
 
-              <div>
-                <h3 className="font-bold text-sm text-neutral-900">{contact.name}</h3>
-                <div className="text-xs text-neutral-500">{contact.role} • {contact.availableHours}</div>
-              </div>
-            </div>
-
-            <div className="space-y-2 pt-2 border-t border-neutral-100">
-              <div className="font-mono font-bold text-base text-neutral-900">{contact.phone}</div>
-              
-              <div className="grid grid-cols-2 gap-2">
-                <a
-                  href={`tel:${contact.phone}`}
-                  className="bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-bold py-2.5 rounded-xl flex items-center justify-center gap-1.5 transition-colors"
-                >
-                  <PhoneCall className="w-3.5 h-3.5" /> Direct Call
-                </a>
-
-                <button
-                  onClick={() => setConfirmContact({ name: contact.name, phone: contact.phone })}
-                  className="bg-red-600 hover:bg-red-700 text-white text-xs font-bold py-2.5 rounded-xl flex items-center justify-center gap-1.5 transition-colors shadow-2xs"
-                >
-                  <Bell className="w-3.5 h-3.5 animate-pulse" /> 1-Tap SOS
-                </button>
+              <div className="rounded-full bg-green-50 px-2 py-1 text-[10px] font-bold uppercase text-green-700">
+                24/7
               </div>
             </div>
+
+            {/* Description */}
+            <p className="mt-4 min-h-[48px] text-sm leading-6 text-gray-600">
+              {contact.description}
+            </p>
+
+            {/* Phone */}
+            <div className="mt-4 flex items-center gap-2 rounded-lg bg-gray-50 px-3 py-2">
+              <PhoneCall className="h-4 w-4 text-gray-500" />
+
+              <span className="text-sm font-semibold text-gray-800">
+                {contact.phone}
+              </span>
+            </div>
+
+            {/* Action */}
+            <button
+              type="button"
+              onClick={() => handleEmergencyClick(contact)}
+              className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-gray-900 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-600 active:scale-[0.99]"
+            >
+              <Bell className="h-4 w-4" />
+              Contact Now
+            </button>
           </div>
         ))}
       </div>
 
-      {/* Emergency Instructions & Protocols */}
-      <div className="saas-card p-6 space-y-3 bg-neutral-900 text-white">
-        <h3 className="text-sm font-bold flex items-center gap-2">
-          <AlertTriangle className="w-4 h-4 text-amber-400" />
-          Resident Emergency Protocol
-        </h3>
-        <p className="text-xs text-neutral-300 leading-relaxed">
-          1. <strong>Medical Emergency:</strong> Pressing 1-Tap SOS immediately alerts Security Gate to open lift barriers for ambulance access.<br />
-          2. <strong>Fire / Gas Leakage:</strong> Evacuate using fire stairs. Do NOT use elevators.<br />
-          3. <strong>Gate Security Verification:</strong> Security personnel receive instant unit location (Apt 204, Tower A) upon SOS triggering.
-        </p>
+      {/* Emergency quick strip */}
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div className="rounded-xl border border-gray-200 bg-white p-4 text-center shadow-sm">
+          <PhoneCall className="mx-auto h-5 w-5 text-gray-700" />
+          <p className="mt-2 text-xs font-semibold text-gray-500">
+            Emergency
+          </p>
+          <p className="mt-1 font-bold text-gray-900">112</p>
+        </div>
+
+        <div className="rounded-xl border border-gray-200 bg-white p-4 text-center shadow-sm">
+          <Flame className="mx-auto h-5 w-5 text-orange-600" />
+          <p className="mt-2 text-xs font-semibold text-gray-500">
+            Fire
+          </p>
+          <p className="mt-1 font-bold text-gray-900">101</p>
+        </div>
+
+        <div className="rounded-xl border border-gray-200 bg-white p-4 text-center shadow-sm">
+          <Ambulance className="mx-auto h-5 w-5 text-red-600" />
+          <p className="mt-2 text-xs font-semibold text-gray-500">
+            Ambulance
+          </p>
+          <p className="mt-1 font-bold text-gray-900">
+            {medicalPhone}
+          </p>
+        </div>
+
+        <div className="rounded-xl border border-gray-200 bg-white p-4 text-center shadow-sm">
+          <Building2 className="mx-auto h-5 w-5 text-blue-600" />
+          <p className="mt-2 text-xs font-semibold text-gray-500">
+            Society Control
+          </p>
+          <p className="mt-1 truncate font-bold text-gray-900">
+            {society.supportPhone}
+          </p>
+        </div>
       </div>
 
-      {/* CONFIRMATION MODAL BEFORE SOS DISPATCH */}
+      {/* Confirmation Modal */}
       {confirmContact && (
-        <div className="fixed inset-0 z-50 bg-neutral-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl border border-red-200 animate-in zoom-in-95 duration-200 relative text-neutral-900 space-y-4">
-            <button
-              onClick={() => setConfirmContact(null)}
-              className="absolute right-4 top-4 text-neutral-400 hover:text-neutral-900 p-1 rounded-full"
-            >
-              <X className="w-5 h-5" />
-            </button>
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm">
+          <div className="w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-2xl">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between border-b border-gray-100 p-5">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100 text-red-600">
+                  <AlertTriangle className="h-5 w-5" />
+                </div>
 
-            <div className="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto">
-              <ShieldAlert className="w-6 h-6 animate-pulse" />
+                <div>
+                  <h3 className="font-bold text-gray-900">
+                    Confirm Emergency Call
+                  </h3>
+
+                  <p className="text-xs text-gray-500">
+                    Please verify before continuing.
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={handleCloseConfirmation}
+                className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+                aria-label="Close"
+              >
+                <X className="h-5 w-5" />
+              </button>
             </div>
 
-            <div className="text-center space-y-1">
-              <h3 className="text-base font-bold text-neutral-900">Confirm Emergency Dispatch</h3>
-              <p className="text-xs text-neutral-600">
-                Are you sure you want to dispatch a critical emergency alert to <strong>{confirmContact.name}</strong>?
+            {/* Modal Content */}
+            <div className="space-y-4 p-5">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  Service
+                </p>
+
+                <p className="mt-1 text-lg font-bold text-gray-900">
+                  {confirmContact.name}
+                </p>
+              </div>
+
+              <div className="rounded-xl bg-gray-50 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  Phone Number
+                </p>
+
+                <p className="mt-1 text-xl font-bold text-gray-900">
+                  {confirmContact.phone}
+                </p>
+              </div>
+
+              <p className="text-sm leading-6 text-gray-600">
+                {confirmContact.description}
               </p>
-              <div className="text-[11px] font-mono text-neutral-500 pt-1">
-                Location: Apt 204, Tower A
+
+              <div className="rounded-lg border border-red-100 bg-red-50 p-3 text-sm text-red-700">
+                <strong>Important:</strong> Only initiate this call for a
+                genuine emergency or urgent assistance.
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 pt-2">
+            {/* Modal Actions */}
+            <div className="flex gap-3 border-t border-gray-100 p-5">
               <button
-                onClick={() => setConfirmContact(null)}
-                className="py-2.5 rounded-xl border border-neutral-300 text-xs font-bold text-neutral-700 hover:bg-neutral-100"
+                type="button"
+                onClick={handleCloseConfirmation}
+                className="flex-1 rounded-xl border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50"
               >
                 Cancel
               </button>
 
               <button
+                type="button"
                 onClick={handleConfirmDispatch}
-                className="py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-2xs flex items-center justify-center gap-1.5"
+                className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-red-600 px-4 py-3 text-sm font-semibold text-white hover:bg-red-700"
               >
-                <Bell className="w-3.5 h-3.5" /> Dispatch SOS
+                <PhoneCall className="h-4 w-4" />
+                Call Now
               </button>
             </div>
           </div>
         </div>
       )}
-
     </div>
   );
 };
+
+export default EmergencyHubModule;
