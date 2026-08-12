@@ -1,0 +1,1 @@
+export default function Providers(){return <main style={{padding:"60px 7vw"}}><a href="/">← Residential</a><h1>Authorized Providers</h1><div className="card"><h2>✓ RESIDENTIAL Authorized</h2><p>Provider directory and verification workflow.</p></div></main>}
