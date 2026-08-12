@@ -95,7 +95,7 @@ export default function CartPage() {
             textDecoration: "none",
           }}
         >
-          ← MI PASS
+          ← Residential
         </a>
 
         <nav

@@ -20,7 +20,7 @@ const productCategories: ProductCategory[] = [
   {
     name: "Food & Restaurants",
     description:
-      "Discover restaurants, cafes, food delivery and dining options around HL City.",
+      "Discover restaurants, cafes, food delivery and dining options around Residential Community.",
     icon: "🍔",
     products: [
       {
@@ -689,7 +689,7 @@ export default function ProductsPage() {
             textDecoration: "none",
           }}
         >
-          ← MI PASS
+          ← Residential
         </a>
 
         {/* NAVBAR */}
@@ -848,7 +848,7 @@ export default function ProductsPage() {
               marginBottom: "25px",
             }}
           >
-            ✓ HL CITY DIGITAL ECOSYSTEM
+            ✓ RESIDENTIAL COMMUNITY DIGITAL ECOSYSTEM
           </div>
 
           <h1
@@ -860,7 +860,7 @@ export default function ProductsPage() {
               fontWeight: 800,
             }}
           >
-            Everything HL City
+            Everything Residential Community
             <br />
 
             <span
@@ -886,7 +886,7 @@ export default function ProductsPage() {
           >
             Discover food, shopping, entertainment, hotels,
             healthcare, education and everyday options around
-            HL City.
+            Residential Community.
           </p>
         </div>
       </section>

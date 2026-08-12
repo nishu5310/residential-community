@@ -1,1 +1,1 @@
-export function AuthorizedBadge(){return <span>✓ MI PASS AUTHORIZED</span>}
+export function AuthorizedBadge(){return <span>✓ RESIDENTIAL AUTHORIZED</span>}

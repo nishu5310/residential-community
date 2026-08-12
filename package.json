@@ -1,5 +1,8 @@
 {
-  "dependencies": {
-    "next": "^15.5.21"
-  }
+  "name": "mi-pass-hl-city-root",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ]
 }

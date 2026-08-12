@@ -243,7 +243,7 @@ export default function CheckoutPage() {
             textDecoration: "none",
           }}
         >
-          ← MI PASS
+          ← Residential
         </a>
 
         <nav
