@@ -2,7 +2,10 @@
   "name": "mi-pass-hl-city-root",
   "private": true,
   "workspaces": [
-    "frontend",
-    "backend"
-  ]
+    "frontend"
+  ],
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom"
+  }
 }

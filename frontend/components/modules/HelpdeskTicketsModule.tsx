@@ -89,14 +89,14 @@ export const HelpdeskTicketsModule: React.FC = () => {
         <div className="saas-card p-4">
           <div className="text-[11px] font-bold text-neutral-400 uppercase">Active Open Tickets</div>
           <div className="text-2xl font-bold text-neutral-900 mt-1">
-            {helpdeskTickets.filter((t) => t.status !== "Resolved" && t.status !== "Closed").length}
+            {helpdeskTickets.filter((t) => t.status !== "Resolved").length}
           </div>
         </div>
 
         <div className="saas-card p-4">
           <div className="text-[11px] font-bold text-neutral-400 uppercase">Resolved This Month</div>
           <div className="text-2xl font-bold text-emerald-600 mt-1">
-            {helpdeskTickets.filter((t) => t.status === "Resolved" || t.status === "Closed").length + 18}
+            {helpdeskTickets.filter((t) => t.status === "Resolved").length + 18}
           </div>
         </div>
 
@@ -133,7 +133,7 @@ export const HelpdeskTicketsModule: React.FC = () => {
                   </div>
 
                   <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full ${
-                    tck.status === "Resolved" || tck.status === "Closed"
+                    tck.status === "Resolved"
                       ? "bg-emerald-100 text-emerald-800"
                       : tck.status === "In Progress"
                       ? "bg-blue-100 text-blue-800"
@@ -179,7 +179,7 @@ export const HelpdeskTicketsModule: React.FC = () => {
               {/* Action Buttons: Mark Resolved vs Reopen */}
               <div className="pt-3 border-t border-neutral-100 flex items-center justify-between text-xs">
                 <span className="text-neutral-400">Submitted: {tck.dateSubmitted}</span>
-                {tck.status !== "Resolved" && tck.status !== "Closed" ? (
+                {tck.status !== "Resolved" ? (
                   <button
                     onClick={() => updateTicketStatus(tck.id, "Resolved")}
                     className="text-xs font-bold text-emerald-700 hover:underline flex items-center gap-1 min-h-[36px]"

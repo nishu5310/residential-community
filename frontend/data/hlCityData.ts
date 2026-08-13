@@ -155,7 +155,7 @@ export interface ComplaintTicket {
   title: string;
   location: string;
   dateSubmitted: string;
-  status: "Submitted" | "Assigned" | "In Progress" | "Resolved" | "Closed";
+  status: "Submitted" | "Assigned" | "In Progress" | "Resolved";
   assignedTechnician?: string;
   estimatedResolution?: string;
   description: string;
